@@ -29,14 +29,3 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn clean install
-
-  deploy:
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy artifact
-        id: deployment
-        uses: actions/deploy-pages@v1
